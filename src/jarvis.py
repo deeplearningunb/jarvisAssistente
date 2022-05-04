@@ -79,14 +79,14 @@ class Jarvis:
             return False
 
     def __start_program(self, command: str) -> bool:
-        app = " ".join(command.split(" ")[1:]).lower()
-        cmd = "{} &".format(app)
+        app = " ".join(command.split(" ")[2:]).lower()
+        cmd = f"exec {app} &"
         if os.system(cmd):
             return True
         return False
 
     def __stop_program(self, command: str) -> bool:
-        app = " ".join(command.split(" ")[1:]).lower()
+        app = " ".join(command.split(" ")[2:]).lower()
         cmd = "pkill {}".format(app)
         if os.system(cmd):
             return True
@@ -106,9 +106,9 @@ class Jarvis:
 
     def __controller(self, command) -> bool:
         if command in ["controle_play", "controle_pausa"]:
-            cmd = "dbus-send --print-reply"
-            cmd += "--dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPla"
-            cmd += "yer2 org.mpris.MediaPlayer2.Player.PlayPause"
+            cmd = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2"
+            cmd += ".spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2."
+            cmd += "Player.PlayPause"
             os.system(cmd)
             return True
 
@@ -128,7 +128,6 @@ class Jarvis:
         return False
 
     def __command_classify(self, command: str) -> str:
-        print(self.encoders)
         x = self.encoders["vectorize"].transform([command])
         pred = self.model.predict(x)
         pred_label = self.encoders["encoder"].inverse_transform(
@@ -160,12 +159,15 @@ class Jarvis:
                     audio = r.listen(source, phrase_time_limit=6)
                 try:
                     command = r.recognize_google(audio, language="pt-BR")
-                    print(command)
+                    print(f"Commando: {command}")
                     command_type = self.__command_classify(command)
-                    print(command_type)
+                    print(f"Classificação: {command_type}")
                     if type(command) is bytes:
                         command = command.encode("utf-8")
-                    _ = COMMANDS[command_type](command)
+                    if "controle" in command_type:
+                        _ = COMMANDS[command_type](command_type)
+                    else:
+                        _ = COMMANDS[command_type](command)
                 except sr.UnknownValueError:
                     self.__say_string("Não entendi!")
                 except sr.RequestError as e:

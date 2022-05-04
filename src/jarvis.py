@@ -1,10 +1,10 @@
-import os
-import re
-from subprocess import check_output
+import os # noqa
+import re # noqa
+from subprocess import check_output # noqa
 
 import pyttsx3
-import speech_recognition as sr
-from selenium import webdriver
+import speech_recognition as sr # noqa
+from selenium import webdriver # noqa
 from pydantic.dataclasses import dataclass
 
 

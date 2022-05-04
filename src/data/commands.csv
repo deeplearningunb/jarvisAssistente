@@ -1,0 +1,54 @@
+label,command
+volume,aumentar volume
+volume,diminuir volume
+volume,abaixar volume
+volume,subir volume
+volume,mais alto
+volume,mais baixo
+controle_pausa,pausar
+controle_pausa,pausar música
+controle_play,continuar música
+controle_play,play música
+controle_play,começar música
+controle_pausa,parar música
+controle_prox,próxima música
+controle_prox,passar música
+controle_prev,música anterior
+controle_prev,voltar música
+spotify,tocar música
+spotify,tocar spotify
+spotify,tocar playlist
+spotify,play spotify
+spotify,play playlist
+projeto,abrir projeto
+projeto,projeto
+projeto,trabalhar projeto
+fechar,fechar aplicativo
+fechar,matar aplicativo
+fechar,fechar app
+fechar,matar app
+fechar,fechar programa
+fechar,matar programa
+abrir,abrir programa
+abrir,abrir app
+abrir,open programa
+abrir,open app
+abrir,ativar programa
+abrir,ativar app
+sair,tchau
+sair,sair
+sair,fechar jarvis
+sair,boa noite
+trabalho,work
+trabalho,hora de trabalhar
+trabalho,trabalhar
+trabalho,abrir trabalho
+trabalho,iniciar dia
+trabalho,iniciar trabalho
+pesquisar,pesquisar
+pesquisar,buscar
+pesquisar,google
+pesquisar,pesquisar google
+pesquisar,pesquisar web
+pesquisar,achar google
+pesquisar,achar web

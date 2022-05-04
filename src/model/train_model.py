@@ -37,7 +37,7 @@ class ModelTrain:
         input_dim = self.x.shape[1]
         self.model = Sequential()
         self.model.add(Dense(10, activation="relu", input_dim=input_dim))
-        self.model.add(Dense(12, activation="sigmoid"))
+        self.model.add(Dense(10, activation="sigmoid"))
         self.model.compile(optimizer='adam', loss="binary_crossentropy")
 
     def __train_model(self) -> None:

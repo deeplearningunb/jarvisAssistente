@@ -59,7 +59,8 @@ class Jarvis:
         try:
             is_open = self.__get_pid("spotify")
             print(is_open)
-            playlist = " ".join(command.lower().split(" ")[2:])
+            playlist = " ".join(command.lower().split(" ")[1:])
+            print(PLAYLISTS[playlist])
             if len(is_open) == 0:
                 play_cmd = "(spotify 1>/dev/null 2>&1 &) && "
                 play_cmd += "sleep 3 && "

@@ -95,9 +95,9 @@ outros pacotes via apt-get.
 
 # Como rodar o sistema;
 Para rodar o sistema tem que ter instalado todos os requisitos que tem no arquivo
-requerements.txt dentro da pasta source:
+requirements.txt dentro da pasta source:
 
-`pip3 install -r requerements.txt`
+`pip3 install -r requirements.txt`
 
 Para executar o jarvis basta digitar `python3 src/jarvis.py`. Após o jarvis falar
 bem vindo. Você pode começar a se comunicar com ele.
